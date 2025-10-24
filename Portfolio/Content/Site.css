@@ -3,6 +3,7 @@
     margin-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
+
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -12,6 +13,24 @@
     white-space: normal;
 }
 
+body
+{
+    background-color : #0b0d2e;
+}
+main div img
+{
+    width : 250px;
+}
+main p
+
+ {
+     text-align : justify-all;
+ }
+
+h1, h2,h3, p
+{
+    color : white;
+}
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,

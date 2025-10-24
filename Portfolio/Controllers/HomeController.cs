@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -15,8 +16,7 @@ namespace Portfolio.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Página para mi portafolio personal y profesional.";
-
+            ViewBag.Message = "Página para mi portafolio personal y profesional";
             return View();
         }
 
