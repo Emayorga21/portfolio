@@ -3,7 +3,6 @@ using Portfolio.Models;
 using System.Collections;
 using System.Collections.Generic;
 using System.EnterpriseServices.Internal;
-
 public class StudentProfile
 {
     public int Id { get; set; }
