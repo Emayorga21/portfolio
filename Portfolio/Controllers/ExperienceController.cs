@@ -7,7 +7,7 @@ namespace Portfolio.Controllers
 {
     public class ExperienceController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContexts db = new ApplicationDbContexts();
 
         public ActionResult Index()
         {

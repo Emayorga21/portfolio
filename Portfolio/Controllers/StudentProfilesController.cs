@@ -7,7 +7,7 @@ namespace Portfolio.Controllers
 {
     public class StudentProfilesController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContexts db = new ApplicationDbContexts();
 
         // GET: StudentProfile
         public ActionResult Index()

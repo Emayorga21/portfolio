@@ -7,11 +7,11 @@ namespace Portfolio.Controllers
 {
     public class SocialLinkController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContexts db = new ApplicationDbContexts();
 
         public ActionResult Index()
         {
-            var list = db.SocialLink.Include("StudentProfile").ToList();
+            var list = db.SocialLinks.Include("StudentProfile").ToList();
             return View(list);
         }
 
@@ -19,7 +19,7 @@ namespace Portfolio.Controllers
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            SocialLink link = db.SocialLink.Find(id);
+            SocialLinks link = db.SocialLinks.Find(id);
             if (link == null) return HttpNotFound();
 
             return View(link);
@@ -33,11 +33,11 @@ namespace Portfolio.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(SocialLink link)
+        public ActionResult Create(SocialLinks link)
         {
             if (ModelState.IsValid)
             {
-                db.SocialLink.Add(link);
+                db.SocialLinks.Add(link);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -50,7 +50,7 @@ namespace Portfolio.Controllers
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            SocialLink link = db.SocialLink.Find(id);
+            SocialLinks link = db.SocialLinks.Find(id);
             if (link == null) return HttpNotFound();
 
             ViewBag.StudentProfileId = new SelectList(db.StudentProfile, "Id", "FullName", link.StudentProfileId);
@@ -59,7 +59,7 @@ namespace Portfolio.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(SocialLink link)
+        public ActionResult Edit(SocialLinks link)
         {
             if (ModelState.IsValid)
             {
@@ -76,7 +76,7 @@ namespace Portfolio.Controllers
         {
             if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
 
-            SocialLink link = db.SocialLink.Find(id);
+            SocialLinks link = db.SocialLinks.Find(id);
             if (link == null) return HttpNotFound();
 
             return View(link);
@@ -86,8 +86,8 @@ namespace Portfolio.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            SocialLink link = db.SocialLink.Find(id);
-            db.SocialLink.Remove(link);
+            SocialLinks link = db.SocialLinks.Find(id);
+            db.SocialLinks.Remove(link);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
